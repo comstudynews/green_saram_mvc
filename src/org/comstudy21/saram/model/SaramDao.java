@@ -1,29 +1,20 @@
 package org.comstudy21.saram.model;
 
-import org.comstudy21.saram.SaramMain;
-
-// ·çÁî Ä¿ÇÃ¸µ
-// °áÇÕµµ ³·Ãß°í ÀÀÁı·Â ³ô¿©¶ó.
-// SOLID 5¿øÄ¢
 public class SaramDao {
-	// ÀÓ½Ã·Î ¹è¿­¿¡ ÀúÀåÇÏµµ·Ï ±¸ÇöÇÑÈÄ DB¿¬µ¿ ¶Ç´Â FileIO·Î Ã³¸®
 	private static final int MAX = 100;
 	private static final SaramVo[] saramArr = new SaramVo[MAX];
 	public static int top = 0;
-	public static int sequenceNo = 1; // Àı´ë·Î °¨¼Ò µÇÁö ¾Ê´Â´Ù.
-	// static ÃÊ±âÈ­ ºí·°
+	public static int sequenceNo = 1; 
 	static {
 		saramArr[top++] = new SaramVo(sequenceNo++, "KIM","010-1111-1111","kim@comstudy.org");
 		saramArr[top++] = new SaramVo(sequenceNo++, "LEE","010-2222-2222","lee@comstudy.org");
 		saramArr[top++] = new SaramVo(sequenceNo++, "PARK","010-3333-3333","park@comstudy.org");
 	}
 	
-	// ÀüÃ¼ Ãâ·Â
 	public SaramVo[] selectAll() {
-		// saramArr¿Í ÂüÁ¶ ²÷±â - »õ ¹è¿­°ú »õ °´Ã¼°¡ ÇÊ¿äÇÏ´Ù.
+
 		SaramVo[] newArr = new SaramVo[top];
 		for(int i=0; i<newArr.length; i++) {
-			// »õ·Î ¸¸µç °´Ã¼¿¡ °ª¸¸ ¿Ã°Ü ´ã±â.
 			SaramVo newSaram = new SaramVo();
 			newSaram.setNo(saramArr[i].getNo());
 			newSaram.setName(saramArr[i].getName());
@@ -33,10 +24,7 @@ public class SaramDao {
 		}
 		return newArr;
 	}
-	// »ó¼¼º¸±â - ÀÌ¸§À¸·Î °Ë»ö
 	public SaramVo selectOne(SaramVo vo) {
-		// 1. °Ë»öÇÏ±â
-		// 2. °°Àº ¿ä°¡°¡ Á¸Àç ÇÏ¸é º¹ÀçÇØ¼­ ¹İÈ¯(return)
 		for(int i=0; i<top; i++) {
 			if(vo.getName().equals(saramArr[i].getName())) {
 				SaramVo newSaram = new SaramVo();
@@ -49,10 +37,7 @@ public class SaramDao {
 		}
 		return null;
 	}
-	// »ó¼¼º¸±â - ÀÌ¸§À¸·Î °Ë»ö
 	public SaramVo selectByNo(int no) {
-		// 1. °Ë»öÇÏ±â
-		// 2. °°Àº ¿ä°¡°¡ Á¸Àç ÇÏ¸é º¹ÀçÇØ¼­ ¹İÈ¯(return)
 		for(int i=0; i<top; i++) {
 			if(no  == saramArr[i].getNo()) {
 				SaramVo newSaram = new SaramVo();
@@ -65,28 +50,22 @@ public class SaramDao {
 		}
 		return null;
 	}
-	// ÀÔ·Â
 	public void insert(SaramVo vo) {
 		if(top >= MAX) {
-			System.out.println(">>> ´õÀÌ»ó ÀÔ·ÂÀÌ ºÒ°¡´ÉÇÕ´Ï´Ù!");
+			System.out.println(">>> ë”ì´ìƒ ì…ë ¥ ë¶ˆê°€ëŠ¥!");
 			return;
 		}
+		vo.setNo(sequenceNo++);
 		saramArr[top++] = vo;
 	}
-	// ¼öÁ¤
 	public void update(SaramVo vo) {
-		// °Ë»öÇØ¼­ °°Àº ¿ä¼Ò°¡ ÀÖ´Ù¸é ¼öÁ¤ÇÏ±â, no·Î °Ë»öÇØ¼­ index¸¦ Ã£±â
 		for(int i=0; i<top; i++) {
 			if(saramArr[i].getNo() == vo.getNo()) {
 				saramArr[i] = vo;
 			}
 		}
 	}
-	// »èÁ¦ 
 	public void delete(SaramVo vo) {
-		// 1. no·Î °Ë»öÇÏ±â
-		// 2. °°Àº ¿ä¼Ò°¡ ÀÖ´Ù¸é ÇÑÄ­½Ä ¶¯±â±â
-		// 3. ¸¶Áö¸· ¿ä¼Ò´Â null·Î º¯°æÇÏ°í top°¨¼Ò
 		for(int i=0; i<top; i++) {
 			if(saramArr[i].getNo() == vo.getNo()) {
 				for(int j=i; j<top-1; j++) {
