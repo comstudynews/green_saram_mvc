@@ -6,17 +6,17 @@ import org.comstudy21.saram.model.SaramVo;
 public class SaramDaoTest {
 	public static SaramDao dao = new SaramDao();
 	
-	// DAO Å×½ºÆ® delete
+	// DAO í…ŒìŠ¤íŠ¸ delete
 	public static void test_delete(String[] args) {
 		dao.delete(new SaramVo(2, null, null, null));
-		// ÀüÃ¼ Ãâ·Â
+		// ì „ì²´ ì¶œë ¥
 		test_selectAll(null);
 	}
 	
-	// DAO Å×½ºÆ® update
+	// DAO í…ŒìŠ¤íŠ¸ update
 	public static void test_update(String[] args) {
 		SaramVo vo = dao.selectByNo(3);
-		// no´Â ÁÖÅ°ÀÌ¹Ç·Î º¯°æÇÏÁö ¾Ê´Â´Ù.
+		// noëŠ” ì£¼í‚¤ì´ë¯€ë¡œ ë³€ê²½í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		vo.setName("PARK2");
 		vo.setPhone("010-3333-3300");
 		vo.setEmail("park2@comstudy.org");
@@ -26,20 +26,20 @@ public class SaramDaoTest {
 		System.out.println(saram);
 	}
 	
-	// DAO Å×½ºÆ® selectByNo
+	// DAO í…ŒìŠ¤íŠ¸ selectByNo
 	public static void test_selectByNo(String[] args) {
 		SaramVo saram = dao.selectByNo(3);
 		System.out.println(saram);
 	}
 
-	// DAO Å×½ºÆ® selectOne
+	// DAO í…ŒìŠ¤íŠ¸ selectOne
 	public static void test_selectOne(String[] args) {
 		SaramVo vo = new SaramVo(0, "LEE", null, null);
 		SaramVo saram = dao.selectOne(vo);
 		System.out.println(saram);
 	}
 	
-	// DAO Å×½ºÆ® selectAll
+	// DAO í…ŒìŠ¤íŠ¸ selectAll
 	public static void test_selectAll(String[] args) {
 		
 		SaramVo[] saramArr = dao.selectAll();

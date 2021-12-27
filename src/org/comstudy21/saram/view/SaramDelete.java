@@ -3,6 +3,6 @@ package org.comstudy21.saram.view;
 public class SaramDelete extends SaramView {
 	@Override
 	public void display() {
-		System.out.println("::::: »ç¶÷ Á¤º¸ »èÁ¦ :::::");
+		System.out.println("::::: ì‚¬ëžŒ ì •ë³´ ì‚­ì œ :::::");
 	}
 }

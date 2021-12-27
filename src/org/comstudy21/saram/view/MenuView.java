@@ -10,23 +10,23 @@ public class MenuView extends SaramView {
 		int no  = 0;
 		while (true) {
 			try {
-				System.out.println("1.ÀÔ·Â 2.Ãâ·Â 3.°Ë»ö 4.¼öÁ¤ 5.»èÁ¦ 6.Á¾·á");
-				System.out.print("¼±ÅÃ: ");
+				System.out.println("1.ìž…ë ¥ 2.ì¶œë ¥ 3.ê²€ìƒ‰ 4.ìˆ˜ì • 5.ì‚­ì œ 6.ì¢…ë£Œ");
+				System.out.print("ì„ íƒ: ");
 				no = scan.nextInt();
 				while (no > 6 || no < 1) {
-					System.out.println("¹üÀ§¸¦ ³Ñ¾ú½À´Ï´Ù.");
-					System.out.print("´Ù½Ã ¼±ÅÃ: ");
+					System.out.println("ë²”ìœ„ë¥¼ ë„˜ì—ˆìŠµë‹ˆë‹¤.");
+					System.out.print("ë‹¤ì‹œ ì„ íƒ: ");
 					no = scan.nextInt();
 				}
 				break;
 			} catch (Exception e) {
-				System.out.println("¼ýÀÚ¸¸ ÀÔ·Â ÇÏ¼¼¿ä!");
+				System.out.println("ìˆ«ìžë§Œ ìž…ë ¥ í•˜ì„¸ìš”!");
 				scan.next();
 				continue;
 			}
 		} // end of while
-		// no°¡ Á¤»óÀûÀ¸·Î ÀÔ·Â µÇ¾ú´Ù.
-		// RÀÇ no¿¡ ¹ÙÀÎµù ÇÑ´Ù...
+		// noê°€ ì •ìƒì ìœ¼ë¡œ ìž…ë ¥ ë˜ì—ˆë‹¤.
+		// Rì˜ noì— ë°”ì¸ë”© í•œë‹¤...
 		R.no = no;
 	}
 }

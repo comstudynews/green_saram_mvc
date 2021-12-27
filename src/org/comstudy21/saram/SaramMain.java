@@ -2,7 +2,7 @@ package org.comstudy21.saram;
 
 public class SaramMain {
 	public static void main(String[] args) {
-		System.out.println("----------- »ç¶÷ Á¤º¸ °ü¸® ÇÁ·Î±×·¥ -------------");
-		R.saramController.action(); // Àç±ÍÈ£Ãâ¿¡ ÀÇÇØ¼­ ¹İº¹ µÊ.
+		System.out.println("----------- ì‚¬ëŒ ì •ë³´ ê´€ë¦¬ í”„ë¡œê·¸ë¨ -------------");
+		R.saramController.action(); // ì¬ê·€í˜¸ì¶œì— ì˜í•´ì„œ ë°˜ë³µ ë¨.
 	}
 }

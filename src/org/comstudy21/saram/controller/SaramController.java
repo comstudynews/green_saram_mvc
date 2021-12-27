@@ -6,9 +6,9 @@ import org.comstudy21.saram.ViewContainer;
 public class SaramController {
 	private ViewContainer vc = new ViewContainer();
 	public void action() {
-		//System.out.println(">>>> SaramController ½ÇÇà ...");
+		//System.out.println(">>>> SaramController ì‹¤í–‰ ...");
 		if(R.no == 0) {
-			vc.run(R.menuView); // µ¿Àû ¹ÙÀÎµù Ã³¸®µÈ´Ù.
+			vc.run(R.menuView); // ë™ì  ë°”ì¸ë”© ì²˜ë¦¬ëœë‹¤.
 		}
 		
 		switch(R.no) {
@@ -17,11 +17,11 @@ public class SaramController {
 		case 3 : vc.run(R.saramDetail); break;
 		case 4 : vc.run(R.saramEdit); break;
 		case 5 : vc.run(R.saramDelete); break;
-		case 6 : System.out.println("ÇÁ·Î±×·¥ Á¾·á"); System.exit(0); break;
-		default : System.out.println("ÇØ´ç ±â´ÉÀÌ ¾ø½À´Ï´Ù!");
+		case 6 : System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ"); System.exit(0); break;
+		default : System.out.println("í•´ë‹¹ ê¸°ëŠ¥ì´ ì—†ìŠµë‹ˆë‹¤!");
 		}
 		
-		// Àç±Í È£Ãâ
+		// ì¬ê·€ í˜¸ì¶œ
 		R.no = 0;
 		action();
 	}

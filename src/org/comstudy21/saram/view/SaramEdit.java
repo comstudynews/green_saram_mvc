@@ -3,6 +3,6 @@ package org.comstudy21.saram.view;
 public class SaramEdit extends SaramView {
 	@Override
 	public void display() {
-		System.out.println("::::: »ç¶÷ Á¤º¸ ¼öÁ¤ :::::");
+		System.out.println("::::: ì‚¬ëžŒ ì •ë³´ ìˆ˜ì • :::::");
 	}
 }
