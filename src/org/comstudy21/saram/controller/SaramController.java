@@ -23,7 +23,13 @@ public class SaramController {
 			R.saramArr = dao.selectAll();
 			vc.run(R.saramListView); 
 			break;
-		case 3 : vc.run(R.saramDetail); break;
+		case 3 : 
+			R.type = R.SEARCH;
+			vc.run(R.saramDetail);
+			R.type = R.DEDAIL;
+			R.saramVo = dao.selectOne(R.saramVo);
+			vc.run(R.saramDetail); 
+			break;
 		case 4 : vc.run(R.saramEdit); break;
 		case 5 : vc.run(R.saramDelete); break;
 		case 6 : System.out.println("프로그램 종료"); System.exit(0); break;

@@ -15,6 +15,9 @@ public class R {
 	public static SaramVo saramVo;
 	public static SaramVo[] saramArr;
 	
+	public static final int SEARCH=0, DEDAIL=1;
+	public static int type = 0;
+	
 	public static final SaramView menuView = new MenuView();
 	
 	public static final SaramView insertView = new InsertView();
