@@ -59,6 +59,7 @@ public class SaramDao {
 		saramArr[top++] = vo;
 	}
 	public void update(SaramVo vo) {
+		if(vo == null) return;
 		for(int i=0; i<top; i++) {
 			if(saramArr[i].getNo() == vo.getNo()) {
 				saramArr[i] = vo;
