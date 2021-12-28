@@ -40,6 +40,9 @@ public class SaramController {
 			vc.run(R.searchByName);
 			R.saramVo = dao.selectOne(R.saramVo);
 			vc.run(R.saramDelete);
+			if(R.saramVo != null) {
+				dao.delete(R.saramVo);
+			}
 			break;
 		case 6 : System.out.println("프로그램 종료"); System.exit(0); break;
 		default : System.out.println("해당 기능이 없습니다!");
